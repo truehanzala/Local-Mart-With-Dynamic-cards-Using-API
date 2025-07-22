@@ -1,0 +1,140 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 0;
+  text-align: center;
+  animation: fadeInDown 1s ease;
+  backdrop-filter: blur(5px);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  animation: spin 4s linear infinite;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+/* Main */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #00c6ff;
+  animation: fadeIn 1.2s ease;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product cards */
+.product-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(2px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.4rem;
+}
+
+.price {
+  color: #00c6ff;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 1rem 0;
+  color: #aaa;
+  margin-top: auto;
+  animation: fadeInUp 1s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+@keyframes spin {
+  0% { transform: rotate(0);}
+  100% { transform: rotate(360deg);}
+}
+
